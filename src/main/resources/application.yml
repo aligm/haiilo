@@ -31,3 +31,7 @@ error:
       ProductSkuUnique: PRODUCT_SKU_UNIQUE
 springdoc:
   pathsToMatch: /api/**
+
+app.offers.sorting-properties:
+  - name
+  - type
