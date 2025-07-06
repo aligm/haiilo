@@ -1,0 +1,46 @@
+<div class="flex flex-wrap mb-6">
+    <h1 class="grow text-3xl md:text-4xl font-medium mb-2" i18n="@@offer.list.headline">Offers</h1>
+    <div>
+        <a routerLink="/offers/add" class="inline-block text-white bg-blue-600 hover:bg-blue-700 focus:ring-blue-300  focus:ring-4 rounded px-5 py-2" i18n="@@offer.list.createNew">Create new Offer</a>
+    </div>
+</div>
+@if (!offers || offers.length === 0) {
+<div i18n="@@offers.list.empty">No Offers could be found.</div>
+} @else {
+<div class="overflow-x-auto">
+    <table class="w-full">
+        <thead>
+            <tr>
+                <th scope="col" class="text-left p-2" i18n="@@offer.sku.label">Sku</th>
+                <th scope="col" class="text-left p-2" i18n="@@offer.name.label">Name</th>
+                <th scope="col" class="text-left p-2" i18n="@@offer.type.label">Offer type</th>
+                <th scope="col" class="text-left p-2" i18n="@@offer.discountPercentage.label">Discount percentage</th>
+                <th scope="col" class="text-left p-2" i18n="@@offer.xForYX.label">X in X for Y offer</th>
+                <th scope="col" class="text-left p-2" i18n="@@offer.xForYY.label">Y in X for Y offer</th>
+                <th scope="col" class="text-left p-2" i18n="@@offer.description.label">description</th>
+                <th><!-- --></th>
+            </tr>
+        </thead>
+        <tbody class="border-t-2 border-black">
+            @for (offer of offers; track offer.id) {
+            <tr class="odd:bg-gray-100">
+                <td class="p-2" hidden="hidden">{{ offer.id }}</td>
+                <td class="p-2">{{ offer.sku }}</td>
+                <td class="p-2">{{ offer.name }}</td>
+                <td class="p-2">{{ offer.type }}</td>
+                <td class="p-2">{{ offer.discountPercentage }}</td>
+                <td class="p-2">{{ offer.xForYX }}</td>
+                <td class="p-2">{{ offer.xForYY }}</td>
+                <td class="p-2">{{ offer.description }}</td>
+                <td class="p-2">
+                    <div class="float-right whitespace-nowrap">
+                        <a [routerLink]="['/offers/edit', offer.id]" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-3 rounded px-2.5 py-1.5 text-sm" i18n="@@offer.list.edit">Edit</a>
+                        <button type="button" (click)="confirmDelete(offer.id!)" class="inline-block text-white bg-gray-500 hover:bg-gray-600 focus:ring-gray-200 focus:ring-3 rounded px-2.5 py-1.5 text-sm" i18n="@@offer.list.delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}
