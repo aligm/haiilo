@@ -15,7 +15,7 @@ The interview exercise that we will use during in person technical interviews is
 | Apple  | 30              | 2 for 45             |
 | Banana | 50              | 3 for 130            |
 | Peach  | 60              |  -                   |
-| Kiwi   | 20              |  -                   
+| Kiwi   | 20              |  -                   |
 
 The checkout accepts the items in any order, so that if we scan an apple, a banana and another apple, we'll recognise two apples and apply the discount of 2 for 45.
 
