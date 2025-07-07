@@ -11,6 +11,7 @@ export class OfferDTO {
   discountPercentage?: number|null;
   xForYX?: number|null;
   xForYY?: number|null;
+  fixedPrice?: number|null;
   description?: string|null;
 
 }

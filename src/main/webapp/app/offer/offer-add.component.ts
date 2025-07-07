@@ -27,6 +27,7 @@ export class OfferAddComponent {
     discountPercentage: new FormControl(null),
     xForYX: new FormControl(null),
     xForYY: new FormControl(null),
+    fixedPrice: new FormControl(null),
     description: new FormControl(null)
   }, { updateOn: 'submit' });
 
