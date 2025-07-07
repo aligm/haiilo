@@ -8,6 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 
+import java.math.BigDecimal;
+
 
 @Entity
 public class Offer {
@@ -44,12 +46,15 @@ public class Offer {
     private Integer xForYY;
 
     @Column
+    private BigDecimal fixedPrice;
+
+    @Column
     private String description;
 
     public Offer() {
     }
 
-    public Offer(Long id, String sku, String name, OfferType type, Short discountPercentage, Integer xForYX, Integer xForYY, String description) {
+    public Offer(Long id, String sku, String name, OfferType type, Short discountPercentage, Integer xForYX, Integer xForYY, BigDecimal fixedPrice, String description) {
         this.id = id;
         this.sku = sku;
         this.name = name;
@@ -57,6 +62,7 @@ public class Offer {
         this.discountPercentage = discountPercentage;
         this.xForYX = xForYX;
         this.xForYY = xForYY;
+        this.fixedPrice = fixedPrice;
         this.description = description;
     }
 
@@ -124,4 +130,11 @@ public class Offer {
         this.description = description;
     }
 
+    public BigDecimal getFixedPrice() {
+        return fixedPrice;
+    }
+
+    public void setFixedPrice(BigDecimal fixedPrice) {
+        this.fixedPrice = fixedPrice;
+    }
 }

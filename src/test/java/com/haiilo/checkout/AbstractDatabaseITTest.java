@@ -10,7 +10,7 @@ import org.testcontainers.utility.DockerImageName;
 
 @SpringBootTest
 @Testcontainers
-abstract class AbstractDatabaseITTest {
+public abstract class AbstractDatabaseITTest {
 
     @Container
     private static PostgreSQLContainer postgres = new PostgreSQLContainer(DockerImageName.parse("postgres:15.1"));

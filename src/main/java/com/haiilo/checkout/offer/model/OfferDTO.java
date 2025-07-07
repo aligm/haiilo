@@ -6,6 +6,8 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 
+import java.math.BigDecimal;
+
 
 public class OfferDTO {
 
@@ -30,6 +32,9 @@ public class OfferDTO {
 
     @Positive
     private Integer xForYY;
+
+    @Positive
+    private BigDecimal fixedPrice;
 
     private String description;
 
@@ -87,6 +92,14 @@ public class OfferDTO {
 
     public void setxForYY(Integer xForYY) {
         this.xForYY = xForYY;
+    }
+
+    public BigDecimal getFixedPrice() {
+        return fixedPrice;
+    }
+
+    public void setFixedPrice(BigDecimal fixedPrice) {
+        this.fixedPrice = fixedPrice;
     }
 
     public String getDescription() {

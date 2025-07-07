@@ -62,6 +62,7 @@ public class OfferService {
         offerDTO.setDescription(offer.getDescription());
         offerDTO.setxForYX(offer.getxForYX());
         offerDTO.setxForYY(offer.getxForYY());
+        offerDTO.setFixedPrice(offer.getFixedPrice());
         return offerDTO;
     }
 
@@ -73,6 +74,7 @@ public class OfferService {
         offer.setDiscountPercentage(offerDTO.getDiscountPercentage());
         offer.setxForYX(offerDTO.getxForYX());
         offer.setxForYY(offerDTO.getxForYY());
+        offer.setFixedPrice(offerDTO.getFixedPrice());
         offer.setDescription(offerDTO.getDescription());
         return offer;
     }
